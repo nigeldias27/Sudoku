@@ -1,14 +1,11 @@
-from crypt import methods
-from email.mime import image
 from urllib import request
-from flask import Flask, render_template,request
+from flask import Flask, render_template,request,redirect
 import cv2
 import numpy
-from PIL import Image
 from tensorflow import keras
 app = Flask(__name__)
-def dl_predict():
-    img = cv2.imread("sko.jpg")
+def dl_predict(filename):
+    img = cv2.imread('./images/'+filename)
     img = cv2.resize(img,(256,256))
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
@@ -105,8 +102,9 @@ def home():
 @app.route('/',methods=['POST'])
 def predict():
     imagefile = request.files['imagefile']
+    print(imagefile.filename)
     imagefile.save('./images/'+imagefile.filename)
-    dl_predict()
+    dl_predict(imagefile.filename)
     return render_template('index.html',finished="all done")
 if __name__=='__main__':
     app.run()
