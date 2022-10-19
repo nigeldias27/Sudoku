@@ -13,4 +13,4 @@ This project uses Python, Keras, OpenCV and Flask
 3. To run the web app, run `python index.py` in the root project folder and open the link given in the browser.
 4. The sko.jpg that is attached to this file can be used to test the website.
 
-### Maintainer in charge [Nigel Dias](https://github.com/nigeldias27)
+### Maintained by: [Nigel Dias](https://github.com/nigeldias27)
