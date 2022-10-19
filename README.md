@@ -4,7 +4,7 @@ The aim is to click a picture of a sudoku puzzle and the program reads the image
 
 ## Tech Stack
 
-This project uses Python, Keras, OpenCV and Flask
+This project uses HTML, Bootstrap, Python, Keras, OpenCV and Flask
 
 ## How to run
 
